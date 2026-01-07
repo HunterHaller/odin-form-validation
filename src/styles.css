@@ -1,0 +1,36 @@
+body {
+  background-image: url("img/parchment.jpg");
+  color: white;
+  font-size: 20pt;
+}
+
+.centered {
+  margin: auto;
+  width: 80%;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+h1 {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+#email:invalid {
+  background-color: rgb(255, 135, 135);
+}
+
+#email:valid {
+  background-color: green;
+}
+
+span {
+  background-color: red;
+  font-size: 15pt;
+}
