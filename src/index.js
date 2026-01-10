@@ -22,7 +22,7 @@ import "./styles.css";
 //I'll set up a listener for each input box and within that, validate
 //the input.
 
-const form = document.querySelector("#form");
+const submitButton = document.querySelector("#submitButton");
 
 //EMAIL:
 //Emails needed to formatted correctly.
@@ -34,6 +34,9 @@ const emailError = document.querySelector("#emailError");
 const emailRegExp = /^[\w.!#$%&'*+/=?^`{|}~-]+@[a-z\d-]+(?:\.[a-z\d-]+)*$/i;
 
 const isValidEmail = () => {
+if (email.value.length == 0) {
+  return false;
+}
   const validity = email.value.length !== 0 && emailRegExp.test(email.value);
   return validity;
 };
@@ -48,20 +51,23 @@ const updateError = (isValid) => {
     emailError.textContent = "And what an excellent address it is...";
     emailError.removeAttribute("class");
   } else {
-    emailError.textContent = "I expect an email, darling!";
+    emailError.textContent = "Write thine address correctly, peasant!";
     emailError.setAttribute("class", "active");
   }
 };
 
 // Handle input event to update email validity
-const handleInput = () => {
+const handleEmailInput = () => {
   const validity = isValidEmail();
   setEmailClass(validity);
   updateError(validity);
+  console.log("Email input handled!");
 };
 
 // Handle form submission to show error if email is invalid
 const handleSubmit = (event) => {
+  console.log("Testing submission...");
+
   event.preventDefault();
 
   const validity = isValidEmail();
@@ -74,9 +80,9 @@ const handleSubmit = (event) => {
 // explicitly set the valid/invalid class on our email field
 setEmailClass(isValidEmail());
 // This defines what happens when the user types in the field
-email.addEventListener("input", handleInput);
+email.addEventListener("input", handleEmailInput);
 // This defines what happens when the user tries to submit the data
-form.addEventListener("submit", handleSubmit);
+submitButton.addEventListener("click", handleSubmit);
 
 //COUNTRY:
 //Country will just be within a droplist, only need to confirm that

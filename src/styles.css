@@ -22,12 +22,12 @@ form {
   gap: 3px;
 }
 
-#email:invalid {
-  background-color: rgb(255, 135, 135);
+#email {
+  background-color: aliceblue;
 }
 
-#email:valid {
-  background-color: green;
+#email:invalid {
+  background-color: rgb(255, 135, 135);
 }
 
 span {
