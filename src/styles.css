@@ -1,5 +1,5 @@
 body {
-  background-image: url("img/parchment.jpg");
+  background-image: url("img/parchment-compressed.jpg");
   color: white;
   font-size: 20pt;
 }
@@ -13,6 +13,11 @@ body {
 
 h1 {
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+label {
+  width: 66%;
+  text-align: center;
 }
 
 form {
@@ -31,6 +36,10 @@ form {
 }
 
 span {
-  background-color: red;
+  background-color: green;
   font-size: 15pt;
+}
+
+span.active {
+  background-color: red;
 }
